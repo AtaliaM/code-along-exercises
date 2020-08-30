@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+
+    <style>
+
+        body {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .cards {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          grid-gap: 15px;
+          padding: 2rem;
+        }
+  
+        .card {
+          background: white;
+          padding: 1rem;
+          border-radius: 2px;
+        }
+  
+        .card img {
+          width: 100%;
+          border: 2px solid black;
+        }
+  
+        .card h2 {
+          color: black;
+        }
+  
+        .modal-outer {
+          display: grid;
+          background: hsla(197, 61%, 63%, 0.7);
+          position: fixed;
+          height: 100vh;
+          width: 100vw;
+          top: 0;
+          left: 0;
+          justify-content: center;
+          align-items: center;
+          /* Hide this modal until we need it */
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.2s;
+        }
+  
+        .modal-outer img {
+          width: 100%;
+        }
+  
+        .modal-outer.open {
+          opacity: 1;
+          pointer-events: all;
+        }
+  
+        .modal-inner {
+          max-width: 600px;
+          min-width: 400px;
+          padding: 2rem;
+          border-radius: 5px;
+          min-height: 200px;
+          background: white;
+          transform: translateY(-200%);
+          transition: transform 2s;
+        }
+  
+        .modal-outer.open .modal-inner {
+          transform: translateY(0);
+        }
+
+        button {
+            height: 30px;
+            width: 120px;
+            background: lightskyblue;
+            border: 2px dotted rgb(41, 38, 38);
+        }
+      </style>
+
+  </head>
+
+  <body>
+    <div class="cards">
+      <div class="card" data-description="Wes is cool">
+        <img src="https://i.pinimg.com/originals/78/ac/aa/78acaad3c2890c0d47f94ec7b3cce9fb.jpg" height="250px" width="320px" alt="ironman">
+        <h2>Iron Man</h2>
+        <button>Learn more →</button>
+      </div>
+      <div class="card" data-description="Scott is neat!">
+        <img src="https://cdn.britannica.com/30/182830-050-96F2ED76/Chris-Evans-title-character-Joe-Johnston-Captain.jpg" height="250px" width="320px" alt="cap">
+        <h2>Captain America</h2>
+        <button>Learn more →</button>
+      </div>
+      <div class="card" data-description="Kait is beautiful!">
+        <img src="https://images.news18.com/ibnlive/uploads/2017/01/hulk.jpg" height="250px" width="320px" alt="hulk">
+        <h2>Hulk</h2>
+        <button>Learn more →</button>
+      </div>
+      <div class="card" data-description="Snickers is a dog!">
+        <img src="https://hips.hearstapps.com/digitalspyuk.cdnds.net/16/19/1463043093-thor-chris-hemsworth-dark-world.jpg" height="250px" width="320px" alt="thor">
+        <h2>Thor</h2>
+        <button>Learn more →</button>
+      </div>
+
+    </div>
+
+    <div class="modal-outer">
+      <div class="modal-inner">
+        <p>TEsting 123</p>
+      </div>
+    </div>
+
+   
+    <script src="./click-outside-modal.js"></script>
+  </body>
+
+</html>
